@@ -41,6 +41,7 @@ import Census from './pages/Census'
 import Briefing from './pages/Briefing'
 import RRT from './pages/RRT'
 import Productivity from './pages/Productivity'
+import Experience from './pages/Experience'
 
 export default function App() {
   return (
@@ -88,6 +89,7 @@ export default function App() {
           <Route path="briefing" element={<Briefing />} />
           <Route path="rrt" element={<RRT />} />
           <Route path="productivity" element={<Productivity />} />
+          <Route path="experience" element={<Experience />} />
         </Route>
       </Routes>
     </BrowserRouter>
