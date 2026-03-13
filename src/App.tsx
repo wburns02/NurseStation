@@ -14,6 +14,7 @@ import TimeOff from './pages/TimeOff'
 import Training from './pages/Training'
 import Coverage from './pages/Coverage'
 import Wellbeing from './pages/Wellbeing'
+import AutoSchedule from './pages/AutoSchedule'
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="training" element={<Training />} />
           <Route path="coverage" element={<Coverage />} />
           <Route path="wellbeing" element={<Wellbeing />} />
+          <Route path="auto-schedule" element={<AutoSchedule />} />
         </Route>
       </Routes>
     </BrowserRouter>
