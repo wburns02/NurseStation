@@ -18,6 +18,7 @@ import {
   Zap,
   Heart,
   Wand2,
+  Layers,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
@@ -40,7 +41,8 @@ const navItems = [
   { to: '/training', icon: GraduationCap, label: 'Training',  end: false, badge: 4, badgeColor: 'bg-red-500' },
   { to: '/coverage',   icon: Zap,   label: 'Coverage',   end: false, badge: 2, badgeColor: 'bg-red-500' },
   { to: '/wellbeing',       icon: Heart,  label: 'Wellbeing',      end: false, badge: 3, badgeColor: 'bg-rose-500' },
-  { to: '/auto-schedule',  icon: Wand2,  label: 'Auto-Schedule',  end: false, badge: 4, badgeColor: 'bg-violet-500' },
+  { to: '/auto-schedule',  icon: Wand2,   label: 'Auto-Schedule',  end: false, badge: 4, badgeColor: 'bg-violet-500' },
+  { to: '/shift-board',   icon: Layers,  label: 'Shift Board',    end: false, badge: 7, badgeColor: 'bg-red-500' },
 ]
 
 export default function Layout() {
