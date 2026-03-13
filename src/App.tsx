@@ -10,6 +10,7 @@ import Messages from './pages/Messages'
 import StaffProfile from './pages/StaffProfile'
 import Notifications from './pages/Notifications'
 import Labor from './pages/Labor'
+import TimeOff from './pages/TimeOff'
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="staff/:staffId" element={<StaffProfile />} />
           <Route path="notifications" element={<Notifications />} />
           <Route path="labor" element={<Labor />} />
+          <Route path="time-off" element={<TimeOff />} />
         </Route>
       </Routes>
     </BrowserRouter>
