@@ -18,6 +18,7 @@ import AutoSchedule from './pages/AutoSchedule'
 import ShiftBoard from './pages/ShiftBoard'
 import Forecast from './pages/Forecast'
 import StaffIntelligence from './pages/StaffIntelligence'
+import ChargeBoard from './pages/ChargeBoard'
 
 export default function App() {
   return (
@@ -42,6 +43,7 @@ export default function App() {
           <Route path="shift-board" element={<ShiftBoard />} />
           <Route path="forecast" element={<Forecast />} />
           <Route path="people" element={<StaffIntelligence />} />
+          <Route path="charge" element={<ChargeBoard />} />
         </Route>
       </Routes>
     </BrowserRouter>
