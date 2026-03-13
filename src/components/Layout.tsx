@@ -14,6 +14,7 @@ import {
   MessageSquare,
   DollarSign,
   CalendarOff,
+  GraduationCap,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
@@ -33,6 +34,7 @@ const navItems = [
   { to: '/analytics', icon: BarChart2, label: 'Analytics', end: false, badge: 0, badgeColor: '' },
   { to: '/labor', icon: DollarSign, label: 'Labor Cost', end: false, badge: 0, badgeColor: '' },
   { to: '/time-off', icon: CalendarOff, label: 'Time Off', end: false, badge: 5, badgeColor: 'bg-amber-500' },
+  { to: '/training', icon: GraduationCap, label: 'Training', end: false, badge: 4, badgeColor: 'bg-red-500' },
 ]
 
 export default function Layout() {
