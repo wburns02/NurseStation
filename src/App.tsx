@@ -25,6 +25,7 @@ import IncidentHub from './pages/IncidentHub'
 import Recognition from './pages/Recognition'
 import RatioMonitor from './pages/RatioMonitor'
 import Handoff from './pages/Handoff'
+import TimeClock from './pages/TimeClock'
 
 export default function App() {
   return (
@@ -56,6 +57,7 @@ export default function App() {
           <Route path="recognition" element={<Recognition />} />
           <Route path="ratios" element={<RatioMonitor />} />
           <Route path="handoff" element={<Handoff />} />
+          <Route path="timeclock" element={<TimeClock />} />
         </Route>
       </Routes>
     </BrowserRouter>
