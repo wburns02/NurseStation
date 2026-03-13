@@ -28,6 +28,7 @@ import {
   Award,
   BarChart3,
   Fingerprint,
+  Receipt,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
@@ -62,6 +63,7 @@ const navItems = [
   { to: '/ratios',      icon: BarChart3,      label: 'Ratio Monitor',   end: false, badge: 2,  badgeColor: 'bg-red-500' },
   { to: '/handoff',     icon: ClipboardList,  label: 'Shift Handoff',   end: false, badge: 4,  badgeColor: 'bg-amber-500' },
   { to: '/timeclock',   icon: Fingerprint,    label: 'Time Clock',      end: false, badge: 0,  badgeColor: '' },
+  { to: '/payroll',     icon: Receipt,        label: 'Pay Period Close', end: false, badge: 3,  badgeColor: 'bg-red-500' },
 ]
 
 export default function Layout() {

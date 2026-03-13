@@ -26,6 +26,7 @@ import Recognition from './pages/Recognition'
 import RatioMonitor from './pages/RatioMonitor'
 import Handoff from './pages/Handoff'
 import TimeClock from './pages/TimeClock'
+import Payroll from './pages/Payroll'
 
 export default function App() {
   return (
@@ -58,6 +59,7 @@ export default function App() {
           <Route path="ratios" element={<RatioMonitor />} />
           <Route path="handoff" element={<Handoff />} />
           <Route path="timeclock" element={<TimeClock />} />
+          <Route path="payroll" element={<Payroll />} />
         </Route>
       </Routes>
     </BrowserRouter>
