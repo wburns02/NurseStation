@@ -76,7 +76,7 @@ Refer to that directory for backend setup, endpoints, and database configuration
 
 ## Production Deployment
 
-- **URL**: Not yet configured
+- **URL**: https://nursestation-production.up.railway.app
 - **Build**: `npm run build` outputs to `dist/`
 - **Deploy**: Push to GitHub; deployment pipeline TBD
 
