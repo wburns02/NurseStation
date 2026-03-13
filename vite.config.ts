@@ -8,6 +8,6 @@ export default defineConfig({
     react(),
   ],
   preview: {
-    allowedHosts: ['opus46-production.up.railway.app'],
+    allowedHosts: true,
   },
 })
