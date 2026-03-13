@@ -100,7 +100,7 @@ function UnitGapBar({ unit, gaps: gapCount, avgFill, maxGaps }: { unit: string; 
           className="h-full bg-gradient-to-r from-violet-500 to-violet-600 rounded flex items-center px-2"
           initial={{ width: 0 }}
           animate={{ width: `${pct}%` }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
+          transition={{ duration: 0.7, ease: 'easeOut' as const }}
         >
           <span className="text-white text-[10px] font-bold whitespace-nowrap">{gapCount} gaps</span>
         </motion.div>

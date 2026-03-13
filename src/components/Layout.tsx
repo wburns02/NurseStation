@@ -9,17 +9,21 @@ import {
   Activity,
   ChevronRight,
   Store,
+  ShieldAlert,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
 const PENDING_APPROVALS = 3
+// Expired + critical credentials (2 expired + 2 critical = 4)
+const CRED_URGENT = 4
 
 const navItems = [
-  { to: '/', icon: LayoutDashboard, label: 'Command Center', end: true, badge: 0 },
-  { to: '/marketplace', icon: Store, label: 'Marketplace', end: false, badge: PENDING_APPROVALS },
-  { to: '/shifts', icon: Calendar, label: 'Shifts', end: false, badge: 0 },
-  { to: '/staff', icon: Users, label: 'Staff', end: false, badge: 0 },
-  { to: '/analytics', icon: BarChart2, label: 'Analytics', end: false, badge: 0 },
+  { to: '/', icon: LayoutDashboard, label: 'Command Center', end: true, badge: 0, badgeColor: '' },
+  { to: '/marketplace', icon: Store, label: 'Marketplace', end: false, badge: PENDING_APPROVALS, badgeColor: 'bg-amber-500' },
+  { to: '/credentials', icon: ShieldAlert, label: 'Credentials', end: false, badge: CRED_URGENT, badgeColor: 'bg-red-500' },
+  { to: '/shifts', icon: Calendar, label: 'Shifts', end: false, badge: 0, badgeColor: '' },
+  { to: '/staff', icon: Users, label: 'Staff', end: false, badge: 0, badgeColor: '' },
+  { to: '/analytics', icon: BarChart2, label: 'Analytics', end: false, badge: 0, badgeColor: '' },
 ]
 
 export default function Layout() {
@@ -53,7 +57,7 @@ export default function Layout() {
 
         {/* Nav */}
         <nav className="flex-1 px-3 py-4 space-y-0.5">
-          {navItems.map(({ to, icon: Icon, label, end, badge }) => (
+          {navItems.map(({ to, icon: Icon, label, end, badge, badgeColor }) => (
             <NavLink
               key={to}
               to={to}
@@ -71,7 +75,7 @@ export default function Layout() {
                   <Icon size={17} />
                   <span className="flex-1">{label}</span>
                   {badge > 0 && !isActive && (
-                    <span className="bg-amber-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">
+                    <span className={`${badgeColor || 'bg-amber-500'} text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center`}>
                       {badge}
                     </span>
                   )}

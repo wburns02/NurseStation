@@ -43,7 +43,7 @@ function MatchBar({ score }: { score: number }) {
           className={`h-full rounded-full ${color}`}
           initial={{ width: 0 }}
           animate={{ width: `${score}%` }}
-          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+          transition={{ duration: 0.6, ease: 'easeOut' as const, delay: 0.1 }}
         />
       </div>
       <span className={`text-xs font-bold ${score >= 90 ? 'text-emerald-600' : score >= 75 ? 'text-amber-600' : 'text-slate-500'}`}>

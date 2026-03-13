@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import {
   AlertTriangle,
@@ -9,10 +9,12 @@ import {
   Clock,
   RefreshCw,
   Store,
+  ShieldAlert,
 } from 'lucide-react'
 import type { ActionStatus } from '../types'
 import { units, gaps as initialGaps } from '../data/mockData'
 import { pendingApprovals } from '../data/marketplaceData'
+import { getExpired, getExpiringWithin } from '../data/credentialsData'
 import { useClock, formatTime, formatDate, shiftTimeRemaining } from '../hooks/useClock'
 import UnitCard from '../components/UnitCard'
 import GapFillPanel from '../components/GapFillPanel'
@@ -73,7 +75,7 @@ export default function Dashboard() {
     setActionStatuses(prev => ({ ...prev, [`${gapId}-${staffId}`]: 'requested' }))
   }
 
-  const handleFillGap = (unitId: string) => {
+  const handleFillGap = (_unitId: string) => {
     // Scroll to the gap fill panel — for now just highlight it
     const el = document.getElementById('gap-fill-panel')
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -96,12 +98,14 @@ export default function Dashboard() {
   const totalRequired = units.reduce((s, u) => s + u.required, 0)
   const totalGaps = units.reduce((s, u) => s + u.openGaps, 0)
   const timeLeft = shiftTimeRemaining(now, SHIFT_END)
+  const expiredCreds = getExpired()
+  const urgentCredCount = expiredCreds.length + getExpiringWithin(30).length
 
-  const container = {
+  const container: Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.07 } },
   }
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 16 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } },
   }
@@ -179,6 +183,29 @@ export default function Dashboard() {
           <Link
             to="/marketplace"
             className="ml-auto flex items-center gap-1 text-xs font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-3 py-1.5 rounded-lg transition-colors"
+          >
+            Review <ArrowUpRight size={11} />
+          </Link>
+        </div>
+      )}
+
+      {/* Credentials urgent nudge */}
+      {urgentCredCount > 0 && !loading && (
+        <div className="bg-red-50 border-b border-red-200 px-6 py-2.5 flex items-center gap-3">
+          <ShieldAlert size={14} className="text-red-500 shrink-0" />
+          <p className="text-sm text-red-800 font-medium">
+            {expiredCreds.length > 0 && (
+              <span className="font-bold">{expiredCreds.length} expired credential{expiredCreds.length !== 1 ? 's' : ''}</span>
+            )}
+            {expiredCreds.length > 0 && urgentCredCount > expiredCreds.length && ' · '}
+            {urgentCredCount > expiredCreds.length && (
+              <span className="font-bold">{urgentCredCount - expiredCreds.length} expiring within 30 days</span>
+            )}
+            {' '}— JCAHO compliance at risk
+          </p>
+          <Link
+            to="/credentials"
+            className="ml-auto flex items-center gap-1 text-xs font-bold text-red-700 bg-red-100 hover:bg-red-200 px-3 py-1.5 rounded-lg transition-colors"
           >
             Review <ArrowUpRight size={11} />
           </Link>
@@ -306,7 +333,7 @@ export default function Dashboard() {
                 { text: 'ICU has been short on Monday day shifts 4 of the last 6 weeks — consider a standing float RN', severity: 'warn' },
                 { text: 'Med-Surg B weekend callout rate is up 23% vs. 30-day average', severity: 'crit' },
                 { text: 'ED evening gaps are predictable Thu–Sun — a dedicated float RN would eliminate them', severity: 'info' },
-                { text: 'NICU: 2 nurses within 90 days of RNC-NIC credential expiry', severity: 'warn' },
+                { text: `Credentials: ${urgentCredCount} staff need urgent renewals — ${expiredCreds.length} already expired`, severity: 'crit', link: '/credentials' },
               ].map((a, i) => (
                 <div key={i} className={`flex items-start gap-2.5 px-3 py-2.5 rounded-lg ${
                   a.severity === 'crit' ? 'bg-red-900/40' : a.severity === 'warn' ? 'bg-amber-900/40' : 'bg-violet-800/50'
@@ -314,7 +341,11 @@ export default function Dashboard() {
                   <AlertTriangle size={13} className={`mt-0.5 shrink-0 ${
                     a.severity === 'crit' ? 'text-red-400' : a.severity === 'warn' ? 'text-amber-400' : 'text-violet-400'
                   }`} />
-                  <p className="text-xs text-violet-200 leading-relaxed">{a.text}</p>
+                  {'link' in a && a.link ? (
+                    <Link to={a.link} className="text-xs text-violet-200 leading-relaxed hover:text-white transition-colors flex-1">{a.text} →</Link>
+                  ) : (
+                    <p className="text-xs text-violet-200 leading-relaxed">{a.text}</p>
+                  )}
                 </div>
               ))}
             </div>

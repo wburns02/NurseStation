@@ -59,7 +59,6 @@ export default function PostShiftModal({ onClose, onPost }: Props) {
         claimedById: undefined,
         claimedByName: undefined,
         claimedByInitials: undefined,
-        viewerCount: 0,
         coworkers: [],
         requiredCerts: ['BLS'],
         requiredUnits: [unit],

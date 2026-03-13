@@ -50,7 +50,7 @@ function MatchBar({ score }: MatchBarProps) {
           className={`h-full rounded-full ${color}`}
           initial={{ width: 0 }}
           animate={{ width: `${score}%` }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+          transition={{ duration: 0.7, ease: 'easeOut' as const, delay: 0.2 }}
         />
       </div>
       <span className={`text-xs font-bold ${score >= 90 ? 'text-emerald-600' : 'text-slate-600'}`}>{score}%</span>
@@ -221,7 +221,7 @@ function GapItem({ gap, actionStatuses, onRequest, defaultExpanded = false }: Ga
 
       {/* Collapsed preview */}
       <AnimatePresence initial={false}>
-        {!expanded && topFill && gap.actionStatuses !== 'confirmed' && (
+        {!expanded && topFill && gap.actionStatus !== 'confirmed' && (
           <motion.div
             key="preview"
             initial={{ height: 0 }}
