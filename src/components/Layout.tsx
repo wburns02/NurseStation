@@ -36,6 +36,7 @@ import {
   Star,
   PiggyBank,
   Waves,
+  Building2,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
@@ -78,6 +79,7 @@ const navItems = [
   { to: '/scorecard',     icon: Star,           label: 'Scorecards',     end: false, badge: 6,  badgeColor: 'bg-amber-500' },
   { to: '/budget',        icon: PiggyBank,      label: 'Budget Intel',   end: false, badge: 2,  badgeColor: 'bg-red-500' },
   { to: '/float',         icon: Waves,          label: 'Float Pool',     end: false, badge: 3,  badgeColor: 'bg-red-500' },
+  { to: '/agency',        icon: Building2,      label: 'Agency Staff',   end: false, badge: 4,  badgeColor: 'bg-amber-500' },
 ]
 
 export default function Layout() {

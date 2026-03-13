@@ -34,6 +34,7 @@ import SelfSchedule from './pages/SelfSchedule'
 import Scorecard from './pages/Scorecard'
 import Budget from './pages/Budget'
 import FloatPool from './pages/FloatPool'
+import Agency from './pages/Agency'
 
 export default function App() {
   return (
@@ -74,6 +75,7 @@ export default function App() {
           <Route path="scorecard" element={<Scorecard />} />
           <Route path="budget" element={<Budget />} />
           <Route path="float" element={<FloatPool />} />
+          <Route path="agency" element={<Agency />} />
         </Route>
       </Routes>
     </BrowserRouter>
