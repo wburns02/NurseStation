@@ -13,6 +13,7 @@ import Labor from './pages/Labor'
 import TimeOff from './pages/TimeOff'
 import Training from './pages/Training'
 import Coverage from './pages/Coverage'
+import Wellbeing from './pages/Wellbeing'
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="time-off" element={<TimeOff />} />
           <Route path="training" element={<Training />} />
           <Route path="coverage" element={<Coverage />} />
+          <Route path="wellbeing" element={<Wellbeing />} />
         </Route>
       </Routes>
     </BrowserRouter>
