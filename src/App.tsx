@@ -16,6 +16,7 @@ import Coverage from './pages/Coverage'
 import Wellbeing from './pages/Wellbeing'
 import AutoSchedule from './pages/AutoSchedule'
 import ShiftBoard from './pages/ShiftBoard'
+import Forecast from './pages/Forecast'
 
 export default function App() {
   return (
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="wellbeing" element={<Wellbeing />} />
           <Route path="auto-schedule" element={<AutoSchedule />} />
           <Route path="shift-board" element={<ShiftBoard />} />
+          <Route path="forecast" element={<Forecast />} />
         </Route>
       </Routes>
     </BrowserRouter>
