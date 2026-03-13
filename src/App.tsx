@@ -36,6 +36,7 @@ import Budget from './pages/Budget'
 import FloatPool from './pages/FloatPool'
 import Agency from './pages/Agency'
 import SafeHours from './pages/SafeHours'
+import OnCall from './pages/OnCall'
 
 export default function App() {
   return (
@@ -78,6 +79,7 @@ export default function App() {
           <Route path="float" element={<FloatPool />} />
           <Route path="agency" element={<Agency />} />
           <Route path="safe-hours" element={<SafeHours />} />
+          <Route path="oncall" element={<OnCall />} />
         </Route>
       </Routes>
     </BrowserRouter>
