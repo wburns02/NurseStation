@@ -40,6 +40,7 @@ import OnCall from './pages/OnCall'
 import Census from './pages/Census'
 import Briefing from './pages/Briefing'
 import RRT from './pages/RRT'
+import Productivity from './pages/Productivity'
 
 export default function App() {
   return (
@@ -86,6 +87,7 @@ export default function App() {
           <Route path="beds" element={<Census />} />
           <Route path="briefing" element={<Briefing />} />
           <Route path="rrt" element={<RRT />} />
+          <Route path="productivity" element={<Productivity />} />
         </Route>
       </Routes>
     </BrowserRouter>
