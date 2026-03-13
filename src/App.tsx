@@ -32,6 +32,7 @@ import Availability from './pages/Availability'
 import Swaps from './pages/Swaps'
 import SelfSchedule from './pages/SelfSchedule'
 import Scorecard from './pages/Scorecard'
+import Budget from './pages/Budget'
 
 export default function App() {
   return (
@@ -70,6 +71,7 @@ export default function App() {
           <Route path="swaps" element={<Swaps />} />
           <Route path="self-schedule" element={<SelfSchedule />} />
           <Route path="scorecard" element={<Scorecard />} />
+          <Route path="budget" element={<Budget />} />
         </Route>
       </Routes>
     </BrowserRouter>
