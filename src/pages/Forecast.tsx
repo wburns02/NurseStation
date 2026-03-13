@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   TrendingUp, AlertTriangle, DollarSign, Target, CheckCircle2,
-  X, ChevronRight, Zap, Loader2, Check, Info, Calendar,
+  X, Zap, Loader2, Check, Info, Calendar,
   ArrowRight, BarChart2, Shield,
 } from 'lucide-react'
 import {

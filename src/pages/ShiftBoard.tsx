@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Layers, AlertTriangle, Clock, CheckCircle2, Users, ArrowLeftRight,
-  Bell, Zap, X, ChevronRight, TrendingDown, Send,
+  Bell, Zap, X, TrendingDown, Send,
   Shield, Star, Check, Loader2, History, UserCheck,
 } from 'lucide-react'
 import {
@@ -261,7 +261,7 @@ interface OpenShiftCardProps {
   onDirectAssign: (shift: OpenShift) => void
   onFilled: () => void
 }
-function OpenShiftCard({ shift, onDirectAssign, onFilled }: OpenShiftCardProps) {
+function OpenShiftCard({ shift, onDirectAssign, onFilled: _onFilled }: OpenShiftCardProps) {
   const [postState, setPostState] = useState<PostState>(
     shift.status === 'posted' || shift.status === 'claimed' ? 'posted' : 'idle'
   )
@@ -595,7 +595,7 @@ export default function ShiftBoard() {
     setStats(getBoardStats())
   }, [])
 
-  function handleAssigned(shiftId: string, _staff: StaffSuggestion) {
+  function handleAssigned(_shiftId: string, _staff: StaffSuggestion) {
     refresh()
     setSelectedShift(null)
   }

@@ -17,6 +17,7 @@ import Wellbeing from './pages/Wellbeing'
 import AutoSchedule from './pages/AutoSchedule'
 import ShiftBoard from './pages/ShiftBoard'
 import Forecast from './pages/Forecast'
+import StaffIntelligence from './pages/StaffIntelligence'
 
 export default function App() {
   return (
@@ -40,6 +41,7 @@ export default function App() {
           <Route path="auto-schedule" element={<AutoSchedule />} />
           <Route path="shift-board" element={<ShiftBoard />} />
           <Route path="forecast" element={<Forecast />} />
+          <Route path="people" element={<StaffIntelligence />} />
         </Route>
       </Routes>
     </BrowserRouter>

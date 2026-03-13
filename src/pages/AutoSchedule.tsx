@@ -23,15 +23,6 @@ const GEN_STEPS = [
 
 // ─── Cell status helpers ──────────────────────────────────────────────────────
 
-function statusColor(status: CellStatus): string {
-  switch (status) {
-    case 'full':      return 'bg-emerald-500'
-    case 'short':     return 'bg-amber-400'
-    case 'no-charge': return 'bg-amber-500'
-    case 'critical':  return 'bg-red-500'
-  }
-}
-
 function statusDot(status: CellStatus): string {
   switch (status) {
     case 'full':      return 'bg-emerald-400'

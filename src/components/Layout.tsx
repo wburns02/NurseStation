@@ -20,6 +20,7 @@ import {
   Wand2,
   Layers,
   TrendingUp,
+  Brain,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
@@ -45,6 +46,7 @@ const navItems = [
   { to: '/auto-schedule',  icon: Wand2,   label: 'Auto-Schedule',  end: false, badge: 4, badgeColor: 'bg-violet-500' },
   { to: '/shift-board',   icon: Layers,     label: 'Shift Board',    end: false, badge: 7, badgeColor: 'bg-red-500' },
   { to: '/forecast',      icon: TrendingUp, label: 'Forecast',       end: false, badge: 6, badgeColor: 'bg-red-500' },
+  { to: '/people',        icon: Brain,      label: 'Staff Intel',    end: false, badge: 3, badgeColor: 'bg-red-500' },
 ]
 
 export default function Layout() {

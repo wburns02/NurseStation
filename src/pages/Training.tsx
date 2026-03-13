@@ -1,5 +1,5 @@
 // Training & Compliance Center — Round 10
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import {
@@ -11,7 +11,7 @@ import {
   hospitalCompliance, moduleSummaries, staffTrainingRecords,
   CATEGORY_META, STATUS_META, trainingModules,
   sendReminder, sendBulkReminders, sentReminders,
-  type TrainingCategory, type CompletionStatus,
+  type TrainingCategory,
 } from '../data/trainingData'
 
 // ─── Animated compliance ring ─────────────────────────────────────────────────

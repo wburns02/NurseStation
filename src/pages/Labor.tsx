@@ -34,9 +34,8 @@ import {
   type FillOption,
 } from '../data/laborData'
 
-// ─── module-level: track applied fills & dismissed state ──────────────────────
+// ─── module-level: track applied fills ────────────────────────────────────────
 let _appliedFills = new Set<string>()  // gapId → applied fill type
-let _dismissedUnits = new Set<string>()
 
 // ─── Animated spend ring ──────────────────────────────────────────────────────
 function SpendRing({
@@ -540,7 +539,6 @@ export default function Labor() {
 
   const gaps = gapFillOptions.filter(g => !appliedFills.has(g.gapId))
   const filledCount = appliedFills.size
-  const totalGaps = gapFillOptions.length
   const totalSavingsAvailable = gapFillOptions.reduce((s, g) => {
     const opts = g.options.filter(o => o.available)
     const cheapest = opts.sort((a, b) => a.shiftCost - b.shiftCost)[0]

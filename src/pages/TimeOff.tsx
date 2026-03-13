@@ -14,14 +14,12 @@ import {
   DollarSign,
   Info,
   Calendar,
-  Filter,
   ArrowUpRight,
   Check,
 } from 'lucide-react'
 import {
   mutableRequests,
   ptoBalances,
-  upcomingAbsences,
   ptoSummary,
   PTO_TYPE_META,
   approveRequest,
@@ -65,7 +63,8 @@ function CalendarStrip({ requests }: { requests: PTORequest[] }) {
   for (const req of requests) {
     if (req.status === 'denied') continue
     const start = new Date(req.startDateISO)
-    const end = new Date(req.endDateISO)
+    const year = req.startDateISO.slice(0, 4)
+    const end = new Date(`${req.endDate} ${year}`)
     const cur = new Date(start)
     while (cur <= end) {
       const key = cur.toISOString().slice(0, 10)

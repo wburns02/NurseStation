@@ -10,7 +10,6 @@ import {
   MessageSquare,
   Zap,
   CheckCircle2,
-  Info,
   Check,
   CheckCheck,
   ChevronRight,

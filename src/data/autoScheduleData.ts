@@ -159,11 +159,9 @@ const floatRN    = s('f001', 'Float Pool RN', 'RN', false, true)
 
 function icuDayCrew(): AutoStaff[] { return [icuCharge, icuRN1, icuRN2, icuRN3] }
 function icuEveCrew(): AutoStaff[] { return [icuEveCharge, icuEveRN1, icuEveRN2, icuRN4] }
-function icuNightCrew(): AutoStaff[] { return [icuNightCharge, icuNightRN1] }
 
 function msaDayCrew(): AutoStaff[] { return [msaCharge, msaRN1, msaRN2, msaRN3, msaLPN1] }
 function msaEveCrew(): AutoStaff[] { return [msaEveCharge, msaEveRN1, msaEveRN2, msaNightRN1] }
-function msaNightCrew(): AutoStaff[] { return [msaNightCharge, msaNightRN1, msaNightRN2] }
 
 function msbDayCrew(): AutoStaff[] { return [msbCharge, msbRN1, msbRN2, msbRN3, msbLPN1] }
 function msbEveCrew(short = false): AutoStaff[] {
@@ -173,8 +171,6 @@ function msbEveCrew(short = false): AutoStaff[] {
 function msbNightCrew(): AutoStaff[] { return [msbNightCharge, msbNightRN1, msbNightRN2] }
 
 function picuDayCrew(): AutoStaff[] { return [picuCharge, picuRN1, picuEveRN1] }
-function picuEveCrew(): AutoStaff[] { return [picuEveCharge, picuEveRN1] }
-function picuNightCrew(): AutoStaff[] { return [picuNightRN1] }  // wait — PICU night requires 2
 
 function edDayCrew(): AutoStaff[] { return [edCharge, edRN1, edRN2, edRN3, edRN4, edEveRN3] }
 function edEveCrew(): AutoStaff[] { return [edEveCharge, edEveRN1, edEveRN2, edEveRN3, edNightRN3] }

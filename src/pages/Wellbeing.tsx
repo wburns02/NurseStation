@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import {
   Heart, TrendingDown, TrendingUp, Minus, AlertTriangle,
-  CheckCircle2, Clock, Calendar, Users, DollarSign,
-  ChevronDown, ChevronUp, Send, X, MessageSquare,
+  CheckCircle2, Calendar, Users, DollarSign,
+  Send, X, MessageSquare,
   Sparkles, BarChart3, Activity, ArrowRight, Star,
 } from 'lucide-react'
 import {
@@ -356,11 +356,12 @@ function StaffDetailPanel({
   if (!record) return null
 
   const meta = BURNOUT_META[record.burnoutLevel]
+  const recordId = record.staffId
 
   function handleCheckIn() {
     setSending(true)
     setTimeout(() => {
-      sendPulseCheckIn(record.staffId)
+      sendPulseCheckIn(recordId)
       setSending(false)
       setSent(true)
     }, 700)
@@ -618,7 +619,7 @@ export default function Wellbeing() {
     }, 1000)
   }
 
-  function handleActionComplete(id: string) {
+  function handleActionComplete(_id: string) {
     setActions([...getActionQueue()])
   }
 

@@ -53,7 +53,6 @@ function buildSnapshot(): UnitDaySnapshot[] {
   return units.map(unit => {
     const cfg = UNIT_LABOR.find(c => c.shortName === unit.shortName) ?? UNIT_LABOR[0]
     // Each shift = 8 hrs, 3 shifts/day
-    const requiredShiftHours = unit.required * 8
     const staffedShiftHours  = unit.staffed  * 8
     const gapHours           = unit.openGaps * 8
 
