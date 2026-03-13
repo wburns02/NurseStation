@@ -25,6 +25,7 @@ import {
   UserPlus,
   TimerReset,
   AlertOctagon,
+  Award,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
@@ -55,6 +56,7 @@ const navItems = [
   { to: '/onboarding',   icon: UserPlus,      label: 'Onboarding',     end: false, badge: 2,  badgeColor: 'bg-amber-500' },
   { to: '/overtime',     icon: TimerReset,    label: 'OT Approvals',   end: false, badge: 3,  badgeColor: 'bg-red-500' },
   { to: '/incidents',   icon: AlertOctagon,  label: 'Incidents',       end: false, badge: 5,  badgeColor: 'bg-red-500' },
+  { to: '/recognition', icon: Award,          label: 'Recognition',     end: false, badge: 2,  badgeColor: 'bg-rose-400' },
 ]
 
 export default function Layout() {

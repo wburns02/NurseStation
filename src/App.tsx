@@ -22,6 +22,7 @@ import ChargeBoard from './pages/ChargeBoard'
 import Onboarding from './pages/Onboarding'
 import OvertimeApproval from './pages/OvertimeApproval'
 import IncidentHub from './pages/IncidentHub'
+import Recognition from './pages/Recognition'
 
 export default function App() {
   return (
@@ -50,6 +51,7 @@ export default function App() {
           <Route path="onboarding" element={<Onboarding />} />
           <Route path="overtime" element={<OvertimeApproval />} />
           <Route path="incidents" element={<IncidentHub />} />
+          <Route path="recognition" element={<Recognition />} />
         </Route>
       </Routes>
     </BrowserRouter>
