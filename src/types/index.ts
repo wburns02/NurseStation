@@ -43,6 +43,36 @@ export interface Gap {
   actionStatus: ActionStatus
 }
 
+export type ListingStatus = 'open' | 'claimed' | 'approved' | 'rejected'
+
+export interface ShiftListing {
+  id: string
+  postedById: string
+  postedByName: string
+  postedByRole: StaffRole
+  postedByInitials: string
+  unitId: string
+  unitName: string
+  unitFloor: string
+  date: string
+  dateShort: string
+  shift: ShiftDef
+  reason: string
+  urgency: 'urgent' | 'normal'
+  postedAt: Date
+  status: ListingStatus
+  claimedById?: string
+  claimedByName?: string
+  claimedByInitials?: string
+  viewerCount: number
+  coworkers: string[]
+  requiredCerts: string[]
+  requiredUnits: string[]
+  matchScore: number
+  matchReasons: string[]
+  matchRiskFlags: string[]
+}
+
 export interface Unit {
   id: string
   name: string

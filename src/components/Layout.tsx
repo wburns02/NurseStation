@@ -8,13 +8,18 @@ import {
   Settings,
   Activity,
   ChevronRight,
+  Store,
 } from 'lucide-react'
 
+// Pending marketplace approvals count — kept in module scope so it's consistent
+const PENDING_APPROVALS = 3
+
 const navItems = [
-  { to: '/', icon: LayoutDashboard, label: 'Command Center', end: true },
-  { to: '/shifts', icon: Calendar, label: 'Shifts', end: false },
-  { to: '/staff', icon: Users, label: 'Staff', end: false },
-  { to: '/analytics', icon: BarChart2, label: 'Analytics', end: false },
+  { to: '/', icon: LayoutDashboard, label: 'Command Center', end: true, badge: 0 },
+  { to: '/marketplace', icon: Store, label: 'Marketplace', end: false, badge: PENDING_APPROVALS },
+  { to: '/shifts', icon: Calendar, label: 'Shifts', end: false, badge: 0 },
+  { to: '/staff', icon: Users, label: 'Staff', end: false, badge: 0 },
+  { to: '/analytics', icon: BarChart2, label: 'Analytics', end: false, badge: 0 },
 ]
 
 export default function Layout() {
@@ -48,7 +53,7 @@ export default function Layout() {
 
         {/* Nav */}
         <nav className="flex-1 px-3 py-4 space-y-0.5">
-          {navItems.map(({ to, icon: Icon, label, end }) => (
+          {navItems.map(({ to, icon: Icon, label, end, badge }) => (
             <NavLink
               key={to}
               to={to}
@@ -65,6 +70,11 @@ export default function Layout() {
                 <>
                   <Icon size={17} />
                   <span className="flex-1">{label}</span>
+                  {badge > 0 && !isActive && (
+                    <span className="bg-amber-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">
+                      {badge}
+                    </span>
+                  )}
                   {isActive && <ChevronRight size={14} className="opacity-60" />}
                 </>
               )}

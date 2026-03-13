@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import {
   AlertTriangle,
   Users,
@@ -7,9 +8,11 @@ import {
   ArrowUpRight,
   Clock,
   RefreshCw,
+  Store,
 } from 'lucide-react'
 import type { ActionStatus } from '../types'
 import { units, gaps as initialGaps } from '../data/mockData'
+import { pendingApprovals } from '../data/marketplaceData'
 import { useClock, formatTime, formatDate, shiftTimeRemaining } from '../hooks/useClock'
 import UnitCard from '../components/UnitCard'
 import GapFillPanel from '../components/GapFillPanel'
@@ -164,6 +167,22 @@ export default function Dashboard() {
             </button>
           </div>
         </motion.div>
+      )}
+
+      {/* Marketplace pending approvals nudge */}
+      {pendingApprovals.length > 0 && !loading && (
+        <div className="bg-amber-50 border-b border-amber-200 px-6 py-2.5 flex items-center gap-3">
+          <Store size={14} className="text-amber-500 shrink-0" />
+          <p className="text-sm text-amber-800 font-medium">
+            <span className="font-bold">{pendingApprovals.length} shift swap{pendingApprovals.length !== 1 ? 's' : ''}</span> in the Marketplace need your approval
+          </p>
+          <Link
+            to="/marketplace"
+            className="ml-auto flex items-center gap-1 text-xs font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-3 py-1.5 rounded-lg transition-colors"
+          >
+            Review <ArrowUpRight size={11} />
+          </Link>
+        </div>
       )}
 
       <div className="p-6 space-y-5">
