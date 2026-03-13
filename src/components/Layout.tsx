@@ -44,6 +44,7 @@ import {
   Siren,
   Gauge,
   Sparkles,
+  BookOpen,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
@@ -94,6 +95,7 @@ const navItems = [
   { to: '/rrt',           icon: Siren,          label: 'RRT & Code Blue', end: false, badge: 1,  badgeColor: 'bg-red-500' },
   { to: '/productivity',  icon: Gauge,          label: 'Productivity',    end: false, badge: 3,  badgeColor: 'bg-red-500' },
   { to: '/experience',   icon: Sparkles,       label: 'Pt. Experience',  end: false, badge: 2,  badgeColor: 'bg-amber-500' },
+  { to: '/skills',       icon: BookOpen,       label: 'Competency',      end: false, badge: 4,  badgeColor: 'bg-red-500' },
 ]
 
 export default function Layout() {

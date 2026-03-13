@@ -42,6 +42,7 @@ import Briefing from './pages/Briefing'
 import RRT from './pages/RRT'
 import Productivity from './pages/Productivity'
 import Experience from './pages/Experience'
+import Skills from './pages/Skills'
 
 export default function App() {
   return (
@@ -90,6 +91,7 @@ export default function App() {
           <Route path="rrt" element={<RRT />} />
           <Route path="productivity" element={<Productivity />} />
           <Route path="experience" element={<Experience />} />
+          <Route path="skills" element={<Skills />} />
         </Route>
       </Routes>
     </BrowserRouter>
