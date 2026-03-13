@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import { unreadCount as notifUnreadCount, criticalCount as notifCriticalCount } from '../data/notificationsData'
 import {
   LayoutDashboard,
   Calendar,
@@ -94,16 +95,32 @@ export default function Layout() {
         <div className="px-3 py-3 border-t border-slate-800 space-y-0.5">
           <NavLink
             to="/notifications"
-            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all"
-            aria-label="Notifications — 5 unread"
+            className={({ isActive }: { isActive: boolean }) =>
+              `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                isActive ? 'bg-violet-600 text-white shadow-lg shadow-violet-900/30' : 'text-slate-400 hover:text-white hover:bg-slate-800'
+              }`
+            }
+            aria-label={`Notifications — ${notifUnreadCount} unread`}
           >
-            <div className="relative" aria-hidden="true">
-              <Bell size={17} />
-              <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-red-500 rounded-full text-white text-[9px] flex items-center justify-center font-bold leading-none">
-                5
-              </span>
-            </div>
-            <span className="flex-1">Notifications</span>
+            {({ isActive }: { isActive: boolean }) => (
+              <>
+                <div className="relative" aria-hidden="true">
+                  <Bell size={17} />
+                  {notifCriticalCount > 0 && !isActive && (
+                    <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-red-500 rounded-full text-white text-[9px] flex items-center justify-center font-bold leading-none">
+                      {notifCriticalCount}
+                    </span>
+                  )}
+                </div>
+                <span className="flex-1">Notifications</span>
+                {notifUnreadCount > 0 && !isActive && (
+                  <span className="bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">
+                    {notifUnreadCount}
+                  </span>
+                )}
+                {isActive && <ChevronRight size={14} className="opacity-60" />}
+              </>
+            )}
           </NavLink>
           <NavLink
             to="/settings"
