@@ -12,6 +12,7 @@ import {
   Store,
   ShieldAlert,
   MessageSquare,
+  DollarSign,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
@@ -29,6 +30,7 @@ const navItems = [
   { to: '/staff', icon: Users, label: 'Staff', end: false, badge: 0, badgeColor: '' },
   { to: '/messages', icon: MessageSquare, label: 'Messages', end: false, badge: MSG_UNREAD, badgeColor: 'bg-violet-500' },
   { to: '/analytics', icon: BarChart2, label: 'Analytics', end: false, badge: 0, badgeColor: '' },
+  { to: '/labor', icon: DollarSign, label: 'Labor Cost', end: false, badge: 0, badgeColor: '' },
 ]
 
 export default function Layout() {

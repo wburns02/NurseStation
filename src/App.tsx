@@ -9,6 +9,7 @@ import Credentials from './pages/Credentials'
 import Messages from './pages/Messages'
 import StaffProfile from './pages/StaffProfile'
 import Notifications from './pages/Notifications'
+import Labor from './pages/Labor'
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="messages" element={<Messages />} />
           <Route path="staff/:staffId" element={<StaffProfile />} />
           <Route path="notifications" element={<Notifications />} />
+          <Route path="labor" element={<Labor />} />
         </Route>
       </Routes>
     </BrowserRouter>
