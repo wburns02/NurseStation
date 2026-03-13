@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Users, Search, Filter, Phone, ChevronDown, ChevronUp } from 'lucide-react'
+import { Users, Search, Filter, Phone, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react'
 import { allStaff } from '../data/mockData'
 import type { StaffMember, StaffRole, StaffStatus } from '../types'
 
@@ -37,12 +38,14 @@ function OTBar({ hours, max }: { hours: number; max: number }) {
 
 function StaffRow({ staff }: { staff: StaffMember }) {
   const [expanded, setExpanded] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <div className="border-b border-slate-100 last:border-0">
-      <button
+      {/* Row — use div so name button can be nested without invalid HTML */}
+      <div
         onClick={() => setExpanded(e => !e)}
-        className="w-full flex items-center gap-4 px-5 py-3 hover:bg-slate-50 transition-colors text-left"
+        className="w-full flex items-center gap-4 px-5 py-3 hover:bg-slate-50 transition-colors cursor-pointer"
       >
         {/* Avatar */}
         <div className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 ${
@@ -56,7 +59,13 @@ function StaffRow({ staff }: { staff: StaffMember }) {
         {/* Name + role */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
-            <p className="text-sm font-semibold text-slate-900 truncate">{staff.name}</p>
+            <button
+              onClick={e => { e.stopPropagation(); navigate(`/staff/${staff.id}`) }}
+              className="text-sm font-semibold text-slate-900 hover:text-violet-600 transition-colors truncate"
+              title={`View ${staff.name}'s profile`}
+            >
+              {staff.name}
+            </button>
             <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${STATUS_BADGE[staff.status]}`}>
               {STATUS_LABEL[staff.status]}
             </span>
@@ -90,7 +99,7 @@ function StaffRow({ staff }: { staff: StaffMember }) {
         <div className="text-slate-400">
           {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
         </div>
-      </button>
+      </div>
 
       {/* Expanded detail */}
       {expanded && (
@@ -106,6 +115,15 @@ function StaffRow({ staff }: { staff: StaffMember }) {
               <a href={`tel:${staff.phone}`} className="flex items-center gap-1.5 text-violet-600 hover:text-violet-800 font-medium">
                 <Phone size={12} /> {staff.phone}
               </a>
+            </div>
+            <div>
+              <p className="text-[10px] uppercase text-slate-400 font-bold tracking-wide mb-1">Profile</p>
+              <button
+                onClick={() => navigate(`/staff/${staff.id}`)}
+                className="flex items-center gap-1.5 text-violet-600 hover:text-violet-800 font-medium text-sm"
+              >
+                <ExternalLink size={12} /> View Full Profile
+              </button>
             </div>
             <div>
               <p className="text-[10px] uppercase text-slate-400 font-bold tracking-wide mb-1">Hours This Week</p>
