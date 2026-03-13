@@ -59,6 +59,7 @@ const navItems = [
   { to: '/incidents',   icon: AlertOctagon,  label: 'Incidents',       end: false, badge: 5,  badgeColor: 'bg-red-500' },
   { to: '/recognition', icon: Award,          label: 'Recognition',     end: false, badge: 2,  badgeColor: 'bg-rose-400' },
   { to: '/ratios',      icon: BarChart3,      label: 'Ratio Monitor',   end: false, badge: 2,  badgeColor: 'bg-red-500' },
+  { to: '/handoff',     icon: ClipboardList,  label: 'Shift Handoff',   end: false, badge: 4,  badgeColor: 'bg-amber-500' },
 ]
 
 export default function Layout() {

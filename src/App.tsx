@@ -24,6 +24,7 @@ import OvertimeApproval from './pages/OvertimeApproval'
 import IncidentHub from './pages/IncidentHub'
 import Recognition from './pages/Recognition'
 import RatioMonitor from './pages/RatioMonitor'
+import Handoff from './pages/Handoff'
 
 export default function App() {
   return (
@@ -54,6 +55,7 @@ export default function App() {
           <Route path="incidents" element={<IncidentHub />} />
           <Route path="recognition" element={<Recognition />} />
           <Route path="ratios" element={<RatioMonitor />} />
+          <Route path="handoff" element={<Handoff />} />
         </Route>
       </Routes>
     </BrowserRouter>
