@@ -10,12 +10,15 @@ import {
   ChevronRight,
   Store,
   ShieldAlert,
+  MessageSquare,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
 const PENDING_APPROVALS = 3
 // Expired + critical credentials (2 expired + 2 critical = 4)
 const CRED_URGENT = 4
+// Unread messages
+const MSG_UNREAD = 4
 
 const navItems = [
   { to: '/', icon: LayoutDashboard, label: 'Command Center', end: true, badge: 0, badgeColor: '' },
@@ -23,6 +26,7 @@ const navItems = [
   { to: '/credentials', icon: ShieldAlert, label: 'Credentials', end: false, badge: CRED_URGENT, badgeColor: 'bg-red-500' },
   { to: '/shifts', icon: Calendar, label: 'Shifts', end: false, badge: 0, badgeColor: '' },
   { to: '/staff', icon: Users, label: 'Staff', end: false, badge: 0, badgeColor: '' },
+  { to: '/messages', icon: MessageSquare, label: 'Messages', end: false, badge: MSG_UNREAD, badgeColor: 'bg-violet-500' },
   { to: '/analytics', icon: BarChart2, label: 'Analytics', end: false, badge: 0, badgeColor: '' },
 ]
 

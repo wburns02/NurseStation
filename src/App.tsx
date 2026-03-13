@@ -6,6 +6,7 @@ import Staff from './pages/Staff'
 import Analytics from './pages/Analytics'
 import Marketplace from './pages/Marketplace'
 import Credentials from './pages/Credentials'
+import Messages from './pages/Messages'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="shifts" element={<Shifts />} />
           <Route path="staff" element={<Staff />} />
           <Route path="analytics" element={<Analytics />} />
+          <Route path="messages" element={<Messages />} />
         </Route>
       </Routes>
     </BrowserRouter>
