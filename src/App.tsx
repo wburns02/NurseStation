@@ -44,6 +44,7 @@ import Productivity from './pages/Productivity'
 import Experience from './pages/Experience'
 import Skills from './pages/Skills'
 import LiveOps from './pages/LiveOps'
+import Acuity from './pages/Acuity'
 
 export default function App() {
   return (
@@ -94,6 +95,7 @@ export default function App() {
           <Route path="experience" element={<Experience />} />
           <Route path="skills" element={<Skills />} />
           <Route path="live" element={<LiveOps />} />
+          <Route path="acuity" element={<Acuity />} />
         </Route>
       </Routes>
     </BrowserRouter>
