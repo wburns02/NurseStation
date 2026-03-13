@@ -38,6 +38,7 @@ import Agency from './pages/Agency'
 import SafeHours from './pages/SafeHours'
 import OnCall from './pages/OnCall'
 import Census from './pages/Census'
+import Briefing from './pages/Briefing'
 
 export default function App() {
   return (
@@ -82,6 +83,7 @@ export default function App() {
           <Route path="safe-hours" element={<SafeHours />} />
           <Route path="oncall" element={<OnCall />} />
           <Route path="beds" element={<Census />} />
+          <Route path="briefing" element={<Briefing />} />
         </Route>
       </Routes>
     </BrowserRouter>
