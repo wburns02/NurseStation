@@ -12,6 +12,7 @@ import Notifications from './pages/Notifications'
 import Labor from './pages/Labor'
 import TimeOff from './pages/TimeOff'
 import Training from './pages/Training'
+import Coverage from './pages/Coverage'
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="labor" element={<Labor />} />
           <Route path="time-off" element={<TimeOff />} />
           <Route path="training" element={<Training />} />
+          <Route path="coverage" element={<Coverage />} />
         </Route>
       </Routes>
     </BrowserRouter>
