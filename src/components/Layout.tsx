@@ -39,6 +39,7 @@ import {
   Building2,
   ShieldCheck,
   PhoneCall,
+  Stethoscope,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
@@ -84,6 +85,7 @@ const navItems = [
   { to: '/agency',        icon: Building2,      label: 'Agency Staff',   end: false, badge: 4,  badgeColor: 'bg-amber-500' },
   { to: '/safe-hours',    icon: ShieldCheck,    label: 'Safe Hours',     end: false, badge: 2,  badgeColor: 'bg-red-500' },
   { to: '/oncall',        icon: PhoneCall,      label: 'On-Call',        end: false, badge: 1,  badgeColor: 'bg-violet-500' },
+  { to: '/beds',          icon: Stethoscope,    label: 'Census & Beds',  end: false, badge: 1,  badgeColor: 'bg-red-500' },
 ]
 
 export default function Layout() {

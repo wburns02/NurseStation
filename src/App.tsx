@@ -37,6 +37,7 @@ import FloatPool from './pages/FloatPool'
 import Agency from './pages/Agency'
 import SafeHours from './pages/SafeHours'
 import OnCall from './pages/OnCall'
+import Census from './pages/Census'
 
 export default function App() {
   return (
@@ -80,6 +81,7 @@ export default function App() {
           <Route path="agency" element={<Agency />} />
           <Route path="safe-hours" element={<SafeHours />} />
           <Route path="oncall" element={<OnCall />} />
+          <Route path="beds" element={<Census />} />
         </Route>
       </Routes>
     </BrowserRouter>
