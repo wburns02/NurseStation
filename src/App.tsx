@@ -20,6 +20,7 @@ import Forecast from './pages/Forecast'
 import StaffIntelligence from './pages/StaffIntelligence'
 import ChargeBoard from './pages/ChargeBoard'
 import Onboarding from './pages/Onboarding'
+import OvertimeApproval from './pages/OvertimeApproval'
 
 export default function App() {
   return (
@@ -46,6 +47,7 @@ export default function App() {
           <Route path="people" element={<StaffIntelligence />} />
           <Route path="charge" element={<ChargeBoard />} />
           <Route path="onboarding" element={<Onboarding />} />
+          <Route path="overtime" element={<OvertimeApproval />} />
         </Route>
       </Routes>
     </BrowserRouter>
