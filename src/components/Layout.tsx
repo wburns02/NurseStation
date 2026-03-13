@@ -35,6 +35,7 @@ import {
   CalendarCheck,
   Star,
   PiggyBank,
+  Waves,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
@@ -76,6 +77,7 @@ const navItems = [
   { to: '/self-schedule', icon: CalendarCheck,  label: 'Self-Schedule',  end: false, badge: 0,  badgeColor: '' },
   { to: '/scorecard',     icon: Star,           label: 'Scorecards',     end: false, badge: 6,  badgeColor: 'bg-amber-500' },
   { to: '/budget',        icon: PiggyBank,      label: 'Budget Intel',   end: false, badge: 2,  badgeColor: 'bg-red-500' },
+  { to: '/float',         icon: Waves,          label: 'Float Pool',     end: false, badge: 3,  badgeColor: 'bg-red-500' },
 ]
 
 export default function Layout() {
