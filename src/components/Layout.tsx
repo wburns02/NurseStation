@@ -33,6 +33,7 @@ import {
   CalendarDays,
   ArrowLeftRight,
   CalendarCheck,
+  Star,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
@@ -72,6 +73,7 @@ const navItems = [
   { to: '/availability',icon: CalendarDays,   label: 'My Availability',  end: false, badge: 0,  badgeColor: '' },
   { to: '/swaps',         icon: ArrowLeftRight, label: 'Shift Swaps',    end: false, badge: 2,  badgeColor: 'bg-amber-500' },
   { to: '/self-schedule', icon: CalendarCheck,  label: 'Self-Schedule',  end: false, badge: 0,  badgeColor: '' },
+  { to: '/scorecard',     icon: Star,           label: 'Scorecards',     end: false, badge: 6,  badgeColor: 'bg-amber-500' },
 ]
 
 export default function Layout() {
