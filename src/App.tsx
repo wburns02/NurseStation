@@ -30,6 +30,7 @@ import Payroll from './pages/Payroll'
 import Hiring from './pages/Hiring'
 import Availability from './pages/Availability'
 import Swaps from './pages/Swaps'
+import SelfSchedule from './pages/SelfSchedule'
 
 export default function App() {
   return (
@@ -66,6 +67,7 @@ export default function App() {
           <Route path="hiring" element={<Hiring />} />
           <Route path="availability" element={<Availability />} />
           <Route path="swaps" element={<Swaps />} />
+          <Route path="self-schedule" element={<SelfSchedule />} />
         </Route>
       </Routes>
     </BrowserRouter>
