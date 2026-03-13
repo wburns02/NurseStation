@@ -41,6 +41,7 @@ import {
   PhoneCall,
   Stethoscope,
   Radio,
+  Siren,
 } from 'lucide-react'
 
 // Pending marketplace approvals count — kept in module scope so it's consistent
@@ -88,6 +89,7 @@ const navItems = [
   { to: '/oncall',        icon: PhoneCall,      label: 'On-Call',        end: false, badge: 1,  badgeColor: 'bg-violet-500' },
   { to: '/beds',          icon: Stethoscope,    label: 'Census & Beds',  end: false, badge: 1,  badgeColor: 'bg-red-500' },
   { to: '/briefing',      icon: Radio,          label: 'Shift Briefing', end: false, badge: 3,  badgeColor: 'bg-red-500' },
+  { to: '/rrt',           icon: Siren,          label: 'RRT & Code Blue', end: false, badge: 1,  badgeColor: 'bg-red-500' },
 ]
 
 export default function Layout() {
